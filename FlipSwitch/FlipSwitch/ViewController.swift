@@ -12,9 +12,9 @@ class ViewController: UIViewController {
 
     // Outletrs
     @IBOutlet var switches: [SwitchView]!
+    @IBOutlet var tutorialLabel: UILabel!
+    @IBOutlet var winViews: [UIView]!
     @IBOutlet var playAgainButton: UIButton!
-    var getRandom: (() -> Int)!
-    var lists: [[Int]]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +22,12 @@ class ViewController: UIViewController {
         // Setup UI
         self.view.backgroundColor = UIColor(red:0.149,  green:0.149,  blue:0.149, alpha:1)
         playAgainButton.layer.cornerRadius = playAgainButton.frame.height/2
-        
-        // Create a list of the switch numbers and remove the current number
-        // to make sure that switches are only associated with another and not itself
-        for index in 0...switches.count-1 {
-            var list = [0, 1, 2, 3]
-            list.remove(at: index)
-            switches[index].tag = list[Int(arc4random_uniform(UInt32(3)))]
+        for view in winViews {
+            view.alpha = 0
         }
+        
+        // Assign button associations
+        refreshButtonAssociations()
         
         // Add tap gesture recognizers to each switch
         for button in switches {
@@ -37,6 +35,17 @@ class ViewController: UIViewController {
             button.addGestureRecognizer(tapgr)
         }
         
+    }
+    
+    // Assigns each button an associated one to also flip
+    // Create a list of the switch numbers and remove the current number
+    // to make sure that switches are only associated with another and not itself
+    func refreshButtonAssociations() {
+        for index in 0...switches.count-1 {
+            var list = [0, 1, 2, 3]
+            list.remove(at: index)
+            switches[index].tag = list[Int(arc4random_uniform(UInt32(3)))]
+        }
     }
 
     // Light status bar
@@ -69,92 +78,31 @@ class ViewController: UIViewController {
         
         // Win
         if win {
-            
+            UIView.animate(withDuration: 0.5, animations: { 
+                self.tutorialLabel.alpha = 0
+                for view in self.winViews {
+                    view.alpha = 1
+                }
+            })
         }
     }
-
-}
-
-class SwitchView: UIView {
     
-    var state = true
-    var animating = false
-    var label: UILabel!
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupUI()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupUI()
-    }
-    
-    func setupUI() {
-        self.backgroundColor = K.green
-        self.layer.borderColor = K.darkGreen.cgColor
-        self.layer.borderWidth = 3
-        self.layer.cornerRadius = 5
+    @IBAction func playAgainButtonTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.5) { 
+            self.tutorialLabel.alpha = 1
+            for view in self.winViews {
+                view.alpha = 0
+            }
+        }
         
-        label = UILabel()
-        label.text = "ON"
-        label.font = UIFont(name: "Avenir-Book", size: 40)
-        label.textColor = UIColor.white
-        label.frame = self.bounds
-        label.textAlignment = .center
-        self.addSubview(label)
-    }
-    
-    func flipSwitch() {
-        // Don't do anything if already animating
-        if animating {
-            return
+        for button in switches {
+            button.flipSwitch()
         }
-        animating = true
         
-        // If on, turn off
-        if state {
-            self.backgroundColor = K.red
-            self.layer.borderColor = K.darkRed.cgColor
-            self.label.text = "OFF"
-            flipOffAnimation()
-        } else { // If off, turn on
-            self.backgroundColor = K.green
-            self.layer.borderColor = K.darkGreen.cgColor
-            self.label.text = "ON"
-            flipOnAnimation()
-        }
-        state = !state
+        refreshButtonAssociations()
     }
     
-    private func flipOffAnimation() {
-        UIView.transition(with: self, duration: 0.5, options: .transitionFlipFromBottom, animations: {
-        }, completion: { (completed) in
-            self.animating = false
-        })
-    }
-    
-    private func flipOnAnimation() {
-        UIView.transition(with: self, duration: 0.5, options: .transitionFlipFromTop, animations: {
-        }, completion: { (completed) in
-            self.animating = false
-        })
-    }
-    
-}
 
-
-
-
-extension Array where Element: Equatable {
-    
-    // Remove first collection element that is equal to the given `object`:
-    mutating func remove(object: Element) {
-        if let index = index(of: object) {
-            remove(at: index)
-        }
-    }
 }
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F2631F31EA077880077655E /* SwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2631F21EA077880077655E /* SwitchView.swift */; };
 		9FAAB3F51EA0507100B9FA0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAAB3F41EA0507100B9FA0E /* AppDelegate.swift */; };
 		9FAAB3F71EA0507100B9FA0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAAB3F61EA0507100B9FA0E /* ViewController.swift */; };
 		9FAAB3FA1EA0507100B9FA0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FAAB3F81EA0507100B9FA0E /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F2631F21EA077880077655E /* SwitchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchView.swift; sourceTree = "<group>"; };
 		9FAAB3F11EA0507100B9FA0E /* FlipSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FAAB3F41EA0507100B9FA0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FAAB3F61EA0507100B9FA0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				9FAAB3F41EA0507100B9FA0E /* AppDelegate.swift */,
 				9FAAB3F61EA0507100B9FA0E /* ViewController.swift */,
+				9F2631F21EA077880077655E /* SwitchView.swift */,
 				9FAAB4061EA05F2300B9FA0E /* Constants.swift */,
 				9FAAB3F81EA0507100B9FA0E /* Main.storyboard */,
 				9FAAB3FB1EA0507100B9FA0E /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F2631F31EA077880077655E /* SwitchView.swift in Sources */,
 				9FAAB3F71EA0507100B9FA0E /* ViewController.swift in Sources */,
 				9FAAB3F51EA0507100B9FA0E /* AppDelegate.swift in Sources */,
 				9FAAB4071EA05F2300B9FA0E /* Constants.swift in Sources */,
@@ -310,6 +314,7 @@
 				9FAAB4051EA0507100B9FA0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
