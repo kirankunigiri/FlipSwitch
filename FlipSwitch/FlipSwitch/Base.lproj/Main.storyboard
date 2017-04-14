@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FlipSwitch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,125 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="krY-YI-l1I">
+                                <rect key="frame" x="42" y="188" width="290" height="290"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="GuB-86-FNE">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="120"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7e-Q2-kCK" customClass="SwitchView" customModule="FlipSwitch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="MnN-8x-NyR"/>
+                                                    <constraint firstAttribute="width" constant="120" id="UOx-6T-oLs"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7pD-FV-nRz" customClass="SwitchView" customModule="FlipSwitch" customModuleProvider="target">
+                                                <rect key="frame" x="170" y="0.0" width="120" height="120"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="7pD-FV-nRz" firstAttribute="width" secondItem="u7e-Q2-kCK" secondAttribute="width" id="Ezp-pq-MgR"/>
+                                            <constraint firstItem="7pD-FV-nRz" firstAttribute="height" secondItem="u7e-Q2-kCK" secondAttribute="height" id="yZi-Gi-sff"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="IMT-Mf-e7v">
+                                        <rect key="frame" x="0.0" y="170" width="290" height="120"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXA-6h-drc" customClass="SwitchView" customModule="FlipSwitch" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vup-2R-tZx" customClass="SwitchView" customModule="FlipSwitch" customModuleProvider="target">
+                                                <rect key="frame" x="170" y="0.0" width="120" height="120"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Vup-2R-tZx" firstAttribute="width" secondItem="u7e-Q2-kCK" secondAttribute="width" id="3JS-kF-dnX"/>
+                                    <constraint firstItem="wXA-6h-drc" firstAttribute="width" secondItem="u7e-Q2-kCK" secondAttribute="width" id="N76-a2-zfE"/>
+                                    <constraint firstItem="Vup-2R-tZx" firstAttribute="height" secondItem="u7e-Q2-kCK" secondAttribute="height" id="NjX-Oc-JoI"/>
+                                    <constraint firstItem="wXA-6h-drc" firstAttribute="height" secondItem="u7e-Q2-kCK" secondAttribute="height" id="YoC-Oo-I1n"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FlipSwitch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5H5-di-Vrb">
+                                <rect key="frame" x="83.5" y="50" width="208.5" height="61.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Kiran Kunigiri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hO-12-Dfw">
+                                <rect key="frame" x="86.5" y="115.5" width="202" height="25"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTY-hc-cDm">
+                                <rect key="frame" x="57" y="587" width="260" height="50"/>
+                                <color key="backgroundColor" red="0.30394348502159119" green="0.87292110919952393" blue="0.92491418123245239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="Qsv-Ad-WGH"/>
+                                    <constraint firstAttribute="height" constant="50" id="aqk-Bo-Yu8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Play Again!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riU-a2-l2K">
+                                <rect key="frame" x="26" y="535" width="323" height="82"/>
+                                <string key="text">Try to turn all the switches off!
+Beware! If you flip one switch, 
+another will change as well!</string>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hooray! You won the game!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-WJ-gJA">
+                                <rect key="frame" x="62" y="539.5" width="251.5" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16762575507164001" green="0.16778519749641418" blue="0.16765043139457703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fhM-WJ-gJA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="11N-bd-d9L"/>
+                            <constraint firstItem="riU-a2-l2K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Ibp-YL-sBB"/>
+                            <constraint firstItem="5H5-di-Vrb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="OsU-Rn-U6f"/>
+                            <constraint firstItem="xTY-hc-cDm" firstAttribute="top" secondItem="fhM-WJ-gJA" secondAttribute="bottom" constant="20" id="PB7-zg-Sdy"/>
+                            <constraint firstItem="5H5-di-Vrb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QTM-mu-JJR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xTY-hc-cDm" secondAttribute="bottom" constant="30" id="V4f-55-1Rh"/>
+                            <constraint firstItem="8hO-12-Dfw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aK4-SF-mmx"/>
+                            <constraint firstItem="krY-YI-l1I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eaS-AH-0qp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="riU-a2-l2K" secondAttribute="bottom" constant="50" id="f1q-4i-sMm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="riU-a2-l2K" secondAttribute="trailing" constant="10" id="sVt-5c-9dk"/>
+                            <constraint firstItem="8hO-12-Dfw" firstAttribute="top" secondItem="5H5-di-Vrb" secondAttribute="bottom" constant="4" id="v2r-na-Kzx"/>
+                            <constraint firstItem="krY-YI-l1I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="x28-AQ-9QD"/>
+                            <constraint firstItem="xTY-hc-cDm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xEL-xX-FWF"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="riU-a2-l2K"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="playAgainButton" destination="xTY-hc-cDm" id="cUq-bb-Ck3"/>
+                        <outletCollection property="switches" destination="u7e-Q2-kCK" collectionClass="NSMutableArray" id="ZFy-WI-RpS"/>
+                        <outletCollection property="switches" destination="7pD-FV-nRz" collectionClass="NSMutableArray" id="wcT-9J-dlz"/>
+                        <outletCollection property="switches" destination="wXA-6h-drc" collectionClass="NSMutableArray" id="fud-XK-r33"/>
+                        <outletCollection property="switches" destination="Vup-2R-tZx" collectionClass="NSMutableArray" id="D6M-gl-sVa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
         </scene>
     </scenes>
 </document>

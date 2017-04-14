@@ -12,6 +12,7 @@
 		9FAAB3FA1EA0507100B9FA0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FAAB3F81EA0507100B9FA0E /* Main.storyboard */; };
 		9FAAB3FC1EA0507100B9FA0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FAAB3FB1EA0507100B9FA0E /* Assets.xcassets */; };
 		9FAAB3FF1EA0507100B9FA0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FAAB3FD1EA0507100B9FA0E /* LaunchScreen.storyboard */; };
+		9FAAB4071EA05F2300B9FA0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAAB4061EA05F2300B9FA0E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		9FAAB3FB1EA0507100B9FA0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FAAB3FE1EA0507100B9FA0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FAAB4001EA0507100B9FA0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FAAB4061EA05F2300B9FA0E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				9FAAB3F41EA0507100B9FA0E /* AppDelegate.swift */,
 				9FAAB3F61EA0507100B9FA0E /* ViewController.swift */,
+				9FAAB4061EA05F2300B9FA0E /* Constants.swift */,
 				9FAAB3F81EA0507100B9FA0E /* Main.storyboard */,
 				9FAAB3FB1EA0507100B9FA0E /* Assets.xcassets */,
 				9FAAB3FD1EA0507100B9FA0E /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			files = (
 				9FAAB3F71EA0507100B9FA0E /* ViewController.swift in Sources */,
 				9FAAB3F51EA0507100B9FA0E /* AppDelegate.swift in Sources */,
+				9FAAB4071EA05F2300B9FA0E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +269,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y9Y96CV7VP;
 				INFOPLIST_FILE = FlipSwitch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.FlipSwitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -278,6 +283,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y9Y96CV7VP;
 				INFOPLIST_FILE = FlipSwitch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.FlipSwitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
