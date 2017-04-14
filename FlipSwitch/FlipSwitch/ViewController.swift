@@ -16,14 +16,36 @@ class ViewController: UIViewController {
     @IBOutlet var winViews: [UIView]!
     @IBOutlet var playAgainButton: UIButton!
     
+    // Constraints for small screen
+    @IBOutlet var hStackViews: [UIStackView]!
+    @IBOutlet var vStackView: UIStackView!
+    @IBOutlet var switchSize: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Setup UI
-        self.view.backgroundColor = UIColor(red:0.149,  green:0.149,  blue:0.149, alpha:1)
+        self.view.backgroundColor = K.darkGray
         playAgainButton.layer.cornerRadius = playAgainButton.frame.height/2
+        playAgainButton.backgroundColor = K.blue
+        playAgainButton.layer.borderColor = K.darkBlue.cgColor
+        playAgainButton.layer.borderWidth = 3
         for view in winViews {
             view.alpha = 0
+        }
+        
+        // Adjust constrain
+        if self.view.frame.height < 600 {
+            for stackView in hStackViews {
+                stackView.spacing = 20
+            }
+            vStackView.spacing = 20
+            switchSize.constant = 100
+            tutorialLabel.font = UIFont(name: tutorialLabel.font.fontName, size: 18)
+            for button in switches {
+                button.label.font = UIFont(name: button.label.font.fontName, size: 30)
+            }
         }
         
         // Assign button associations

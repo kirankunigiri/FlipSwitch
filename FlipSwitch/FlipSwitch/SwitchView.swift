@@ -13,6 +13,7 @@ class SwitchView: UIView {
     var state = true
     var animating = false
     var label: UILabel!
+    private var animationDuration = 0.5
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,6 +37,7 @@ class SwitchView: UIView {
         label.textColor = UIColor.white
         label.frame = self.bounds
         label.textAlignment = .center
+        label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(label)
     }
     
@@ -62,14 +64,14 @@ class SwitchView: UIView {
     }
     
     private func flipOffAnimation() {
-        UIView.transition(with: self, duration: 0.5, options: .transitionFlipFromBottom, animations: {
+        UIView.transition(with: self, duration: animationDuration, options: .transitionFlipFromBottom, animations: {
         }, completion: { (completed) in
             self.animating = false
         })
     }
     
     private func flipOnAnimation() {
-        UIView.transition(with: self, duration: 0.5, options: .transitionFlipFromTop, animations: {
+        UIView.transition(with: self, duration: animationDuration, options: .transitionFlipFromTop, animations: {
         }, completion: { (completed) in
             self.animating = false
         })
