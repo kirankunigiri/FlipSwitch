@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +25,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="krY-YI-l1I">
                                 <rect key="frame" x="42" y="188" width="290" height="290"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="GuB-86-FNE">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="GuB-86-FNE" userLabel="HStack View 1">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="120"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7e-Q2-kCK" customClass="SwitchView" customModule="FlipSwitch" customModuleProvider="target">
@@ -47,7 +46,7 @@
                                             <constraint firstItem="7pD-FV-nRz" firstAttribute="height" secondItem="u7e-Q2-kCK" secondAttribute="height" id="yZi-Gi-sff"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="IMT-Mf-e7v">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="IMT-Mf-e7v" userLabel="HStack View 2">
                                         <rect key="frame" x="0.0" y="170" width="290" height="120"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXA-6h-drc" customClass="SwitchView" customModule="FlipSwitch" customModuleProvider="target">
@@ -68,13 +67,7 @@
                                     <constraint firstItem="wXA-6h-drc" firstAttribute="height" secondItem="u7e-Q2-kCK" secondAttribute="height" id="YoC-Oo-I1n"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FlipSwitch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5H5-di-Vrb">
-                                <rect key="frame" x="83.5" y="50" width="208.5" height="61.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="45"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Kiran Kunigiri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hO-12-Dfw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Kiran Kunigiri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hO-12-Dfw" userLabel="Author Label">
                                 <rect key="frame" x="86.5" y="115.5" width="202" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -104,26 +97,43 @@ another will change as well!</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hooray! You won the game!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-WJ-gJA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hooray! You won the game!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-WJ-gJA" userLabel="You Win Label">
                                 <rect key="frame" x="62" y="524.5" width="251.5" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFt-kH-pv6" userLabel="Title Stack View">
+                                <rect key="frame" x="83" y="50" width="208.5" height="61.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcm-wc-qq6">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="61.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="45"/>
+                                        <color key="textColor" red="0.27245581150054932" green="0.79244703054428101" blue="0.67672377824783325" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61I-8D-ZaE">
+                                        <rect key="frame" x="75" y="0.0" width="133.5" height="61.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="45"/>
+                                        <color key="textColor" red="0.92456609010696411" green="0.34346383810043335" blue="0.34116858243942261" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.16762575507164001" green="0.16778519749641418" blue="0.16765043139457703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fhM-WJ-gJA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="11N-bd-d9L"/>
+                            <constraint firstItem="8hO-12-Dfw" firstAttribute="top" secondItem="IFt-kH-pv6" secondAttribute="bottom" constant="4" id="A2c-4e-SPI"/>
+                            <constraint firstItem="IFt-kH-pv6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="GHq-AE-jjh"/>
                             <constraint firstItem="riU-a2-l2K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Ibp-YL-sBB"/>
-                            <constraint firstItem="5H5-di-Vrb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="OsU-Rn-U6f"/>
                             <constraint firstItem="xTY-hc-cDm" firstAttribute="top" secondItem="fhM-WJ-gJA" secondAttribute="bottom" constant="20" id="PB7-zg-Sdy"/>
-                            <constraint firstItem="5H5-di-Vrb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QTM-mu-JJR"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xTY-hc-cDm" secondAttribute="bottom" constant="40" id="V4f-55-1Rh"/>
                             <constraint firstItem="8hO-12-Dfw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aK4-SF-mmx"/>
                             <constraint firstItem="krY-YI-l1I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eaS-AH-0qp"/>
+                            <constraint firstItem="IFt-kH-pv6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eaZ-AO-WB6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="riU-a2-l2K" secondAttribute="bottom" constant="50" id="f1q-4i-sMm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="riU-a2-l2K" secondAttribute="trailing" constant="10" id="sVt-5c-9dk"/>
-                            <constraint firstItem="8hO-12-Dfw" firstAttribute="top" secondItem="5H5-di-Vrb" secondAttribute="bottom" constant="4" id="v2r-na-Kzx"/>
                             <constraint firstItem="krY-YI-l1I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="x28-AQ-9QD"/>
                             <constraint firstItem="xTY-hc-cDm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xEL-xX-FWF"/>
                         </constraints>
