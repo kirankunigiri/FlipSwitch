@@ -13,46 +13,63 @@ class ViewController: UIViewController {
     // Outletrs
     @IBOutlet var switches: [SwitchView]!
     @IBOutlet var playAgainButton: UIButton!
-    
+    var getRandom: (() -> Int)!
+    var lists: [[Int]]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Setup UI
         self.view.backgroundColor = UIColor(red:0.149,  green:0.149,  blue:0.149, alpha:1)
         playAgainButton.layer.cornerRadius = playAgainButton.frame.height/2
         
-        var availableSwitches = switches
+        // Create a list of the switch numbers and remove the current number
+        // to make sure that switches are only associated with another and not itself
         for index in 0...switches.count-1 {
-            switches[index].tag = index
+            var list = [0, 1, 2, 3]
+            list.remove(at: index)
+            switches[index].tag = list[Int(arc4random_uniform(UInt32(3)))]
         }
         
+        // Add tap gesture recognizers to each switch
         for button in switches {
             let tapgr = UITapGestureRecognizer(target: self, action: #selector(handleTap))
             button.addGestureRecognizer(tapgr)
         }
         
-//        var pairs = switches
-//        pairs?.remove(at: 0)
     }
 
+    // Light status bar
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    // Handle taps on each switch
     func handleTap(recognizer: UITapGestureRecognizer) {
+        
+        // Don't do anything if it's still animating
+        for button in switches {
+            if button.animating {
+                return
+            }
+        }
+        
+        // Flip the switch and the corresponding one
         let button = (recognizer.view as! SwitchView)
         button.flipSwitch()
-        if button.tag == 0 {
-            switches[1].flipSwitch()
+        switches[button.tag].flipSwitch()
+        
+        // Check for game win
+        var win = true
+        for button in switches {
+            if button.state {
+                win = false
+            }
         }
-        if button.tag == 1 {
-            switches[2].flipSwitch()
-        }
-        if button.tag == 2 {
-            switches[3].flipSwitch()
-        }
-        if button.tag == 3 {
-            switches[0].flipSwitch()
+        
+        // Win
+        if win {
+            
         }
     }
 
@@ -126,4 +143,18 @@ class SwitchView: UIView {
     }
     
 }
+
+
+
+
+extension Array where Element: Equatable {
+    
+    // Remove first collection element that is equal to the given `object`:
+    mutating func remove(object: Element) {
+        if let index = index(of: object) {
+            remove(at: index)
+        }
+    }
+}
+
 
