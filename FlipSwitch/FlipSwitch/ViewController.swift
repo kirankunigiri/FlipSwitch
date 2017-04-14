@@ -29,13 +29,18 @@ class ViewController: UIViewController {
         self.view.backgroundColor = K.darkGray
         playAgainButton.layer.cornerRadius = playAgainButton.frame.height/2
         playAgainButton.backgroundColor = K.blue
-        playAgainButton.layer.borderColor = K.darkBlue.cgColor
-        playAgainButton.layer.borderWidth = 3
+        
+        // Add shadow to button
+        playAgainButton.layer.shadowColor = K.blueShadow.cgColor
+        playAgainButton.layer.shadowOpacity = 1
+        playAgainButton.layer.shadowOffset = CGSize.zero
+        playAgainButton.layer.shadowRadius = 6
+        
         for view in winViews {
             view.alpha = 0
         }
         
-        // Adjust constrain
+        // Adjust constraints for small screen
         if self.view.frame.height < 600 {
             for stackView in hStackViews {
                 stackView.spacing = 20
@@ -98,7 +103,7 @@ class ViewController: UIViewController {
             }
         }
         
-        // Win
+        // Win - Show the win views
         if win {
             UIView.animate(withDuration: 0.5, animations: { 
                 self.tutorialLabel.alpha = 0
@@ -110,6 +115,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playAgainButtonTapped(_ sender: UIButton) {
+        // Show the tutorial
         UIView.animate(withDuration: 0.5) { 
             self.tutorialLabel.alpha = 1
             for view in self.winViews {
@@ -117,10 +123,14 @@ class ViewController: UIViewController {
             }
         }
         
+        // Unflip all the switches
         for button in switches {
-            button.flipSwitch()
+            if !button.state {
+                button.flipSwitch()
+            }
         }
         
+        // Refresh the associations
         refreshButtonAssociations()
     }
     

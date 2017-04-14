@@ -81,11 +81,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTY-hc-cDm">
-                                <rect key="frame" x="57" y="587" width="260" height="50"/>
+                                <rect key="frame" x="57" y="572" width="260" height="55"/>
                                 <color key="backgroundColor" red="0.30394348502159119" green="0.87292110919952393" blue="0.92491418123245239" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="Qsv-Ad-WGH"/>
-                                    <constraint firstAttribute="height" constant="50" id="aqk-Bo-Yu8"/>
+                                    <constraint firstAttribute="height" constant="55" id="aqk-Bo-Yu8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="Play Again!">
@@ -105,7 +105,7 @@ another will change as well!</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hooray! You won the game!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhM-WJ-gJA">
-                                <rect key="frame" x="62" y="539.5" width="251.5" height="27.5"/>
+                                <rect key="frame" x="62" y="524.5" width="251.5" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -118,7 +118,7 @@ another will change as well!</string>
                             <constraint firstItem="5H5-di-Vrb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="OsU-Rn-U6f"/>
                             <constraint firstItem="xTY-hc-cDm" firstAttribute="top" secondItem="fhM-WJ-gJA" secondAttribute="bottom" constant="20" id="PB7-zg-Sdy"/>
                             <constraint firstItem="5H5-di-Vrb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QTM-mu-JJR"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xTY-hc-cDm" secondAttribute="bottom" constant="30" id="V4f-55-1Rh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xTY-hc-cDm" secondAttribute="bottom" constant="40" id="V4f-55-1Rh"/>
                             <constraint firstItem="8hO-12-Dfw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aK4-SF-mmx"/>
                             <constraint firstItem="krY-YI-l1I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eaS-AH-0qp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="riU-a2-l2K" secondAttribute="bottom" constant="50" id="f1q-4i-sMm"/>

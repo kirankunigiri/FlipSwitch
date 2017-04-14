@@ -10,11 +10,15 @@ import UIKit
 
 class SwitchView: UIView {
     
+    // Off/on state
     var state = true
     var animating = false
     var label: UILabel!
-    private var animationDuration = 0.5
+    private var animationDuration = 0.4
     
+    
+    
+    // Initializersz
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -26,11 +30,11 @@ class SwitchView: UIView {
     }
     
     func setupUI() {
+        // View UI
         self.backgroundColor = K.green
-        self.layer.borderColor = K.darkGreen.cgColor
-        self.layer.borderWidth = 3
         self.layer.cornerRadius = 5
         
+        // Add text label
         label = UILabel()
         label.text = "ON"
         label.font = UIFont(name: "Avenir-Book", size: 40)
@@ -39,6 +43,12 @@ class SwitchView: UIView {
         label.textAlignment = .center
         label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(label)
+        
+        // Add shadow
+        self.layer.shadowColor = K.greenShadow.cgColor
+        self.layer.shadowOpacity = 1
+        self.layer.shadowOffset = CGSize(width: 0, height: 20)
+        self.layer.shadowRadius = 18
     }
     
     func flipSwitch() {
@@ -50,27 +60,33 @@ class SwitchView: UIView {
         
         // If on, turn off
         if state {
-            self.backgroundColor = K.red
-            self.layer.borderColor = K.darkRed.cgColor
-            self.label.text = "OFF"
             flipOffAnimation()
         } else { // If off, turn on
-            self.backgroundColor = K.green
-            self.layer.borderColor = K.darkGreen.cgColor
-            self.label.text = "ON"
             flipOnAnimation()
         }
+        
+        // Update state
         state = !state
     }
     
+    // Button off animation
     private func flipOffAnimation() {
+        self.backgroundColor = K.red
+        self.layer.shadowColor = K.redShadow.cgColor
+        self.label.text = "OFF"
+        
         UIView.transition(with: self, duration: animationDuration, options: .transitionFlipFromBottom, animations: {
         }, completion: { (completed) in
             self.animating = false
         })
     }
     
+    // Button on animation
     private func flipOnAnimation() {
+        self.backgroundColor = K.green
+        self.layer.shadowColor = K.greenShadow.cgColor
+        self.label.text = "ON"
+        
         UIView.transition(with: self, duration: animationDuration, options: .transitionFlipFromTop, animations: {
         }, completion: { (completed) in
             self.animating = false
@@ -78,3 +94,5 @@ class SwitchView: UIView {
     }
     
 }
+
+
