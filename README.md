@@ -1,7 +1,10 @@
-## FlipSwitch
+ ![Banner](Assets/Icon.png)
 
+## FlipSwitch
 A short and small iOS minigame.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/h6vuQHe5S4I" frameborder="0" allowfullscreen></iframe>
+ ![Demo](Assets/Demo.gif)
 
-The goal of the game is to try and switch all of the tiles off. Each tile is associated with another and will flip the corresponding tile as well when switched. It's randomized each time and is extremely easy to beat in a few seconds.
+ [Youtube Demo Video](https://youtu.be/h6vuQHe5S4I)
+
+The goal of the game is to try and switch all of the tiles off. Each tile is associated with another and will flip the corresponding tile as well when switched. It's randomized each time and is easy to beat in just a few seconds.

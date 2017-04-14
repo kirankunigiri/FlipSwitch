@@ -10,13 +10,13 @@ import UIKit
 
 class SwitchView: UIView {
     
-    // Off/on state
+    // Properties
     var state = true
     var animating = false
-    var label: UILabel!
     private var animationDuration = 0.4
     
-    
+    // Views
+    var label: UILabel!
     
     // Initializersz
     override init(frame: CGRect) {
@@ -51,6 +51,7 @@ class SwitchView: UIView {
         self.layer.shadowRadius = 18
     }
     
+    // Flips a switch's state
     func flipSwitch() {
         // Don't do anything if already animating
         if animating {

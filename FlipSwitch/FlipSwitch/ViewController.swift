@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         playAgainButton.layer.shadowOffset = CGSize.zero
         playAgainButton.layer.shadowRadius = 6
         
+        // Hide win views
         for view in winViews {
             view.alpha = 0
         }
@@ -64,8 +65,8 @@ class ViewController: UIViewController {
         
     }
     
-    // Assigns each button an associated one to also flip
-    // Create a list of the switch numbers and remove the current number
+    // Assigns each switch a corresponding switch that will also flip when tapped
+    // Creates a list of the possible indexes and removes the current switch index
     // to make sure that switches are only associated with another and not itself
     func refreshButtonAssociations() {
         for index in 0...switches.count-1 {
