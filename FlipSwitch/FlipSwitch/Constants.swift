@@ -24,4 +24,7 @@ struct K {
     static let greenShadow = UIColor(red:0.067,  green:0.439,  blue:0.349, alpha:1)
     static let redShadow = UIColor(red:0.616,  green:0.114,  blue:0.114, alpha:1)
     static let blueShadow = UIColor(red:0.443,  green:0.953,  blue:1, alpha:1)
+    
+    static let beginningText = "Choose a game difficulty!"
+    static let winText = "Hooray! You won! Play again?"
 }

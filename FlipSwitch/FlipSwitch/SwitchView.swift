@@ -13,6 +13,7 @@ class SwitchView: UIView {
     // Properties
     var state = true
     var animating = false
+    var tags: [Int] = []
     private var animationDuration = 0.4
     
     // Views
@@ -27,6 +28,11 @@ class SwitchView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupUI()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.label.font = UIFont(name: self.label.font.fontName, size: 0.33*self.frame.height)
     }
     
     func setupUI() {
