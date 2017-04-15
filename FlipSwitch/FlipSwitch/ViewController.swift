@@ -246,7 +246,7 @@ class ViewController: UIViewController {
                 list.append(index)
             }
             list.remove(at: index)
-            for i in 0...Int(gridSize)-2 {
+            for _ in 0...Int(gridSize)-2 {
                 let random = Int(arc4random_uniform(UInt32(list.count)))
                 switches[index].tags.append(list[random])
                 list.remove(at: random)
